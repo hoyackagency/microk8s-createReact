@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: react-app-service
+  namespace: react
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      #protocol: TCP
+      #nodePort: 31000
+  selector:
+    app: react-app
